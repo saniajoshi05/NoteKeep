@@ -1,4 +1,19 @@
+import { useRef } from "react";
+
 function App() {
+  const fileInputRef = useRef(null);
+
+  const handleAddDocument = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileSelected = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      console.log("Selected file:", file.name);
+    }
+  };
   return (
     <div className="app">
       <aside className="sidebar">
@@ -43,6 +58,13 @@ function App() {
       </aside>
 
       <main className="main-content">
+        <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileSelected}
+        accept=".pdf,.doc,.docx,.ppt,.pptx,.txt"
+        style={{ display: "none" }}
+        />
         <header className="topbar">
           <div>
             <h1>Good morning</h1>
@@ -51,7 +73,7 @@ function App() {
 
           <div className="topbar-actions">
             <button className="search-button">
-              🔍 Search your vault
+               Search your vault
             </button>
 
             <div className="profile">
@@ -69,7 +91,7 @@ function App() {
             </p>
           </div>
 
-          <button className="upload-button">
+          <button className="upload-button" onClick={handleAddDocument}>
             + Add Document
           </button>
         </section>
@@ -122,7 +144,7 @@ function App() {
               personal knowledge base.
             </p>
 
-            <button className="upload-button">
+            <button className="upload-button" onClick={handleAddDocument}>
               Add your first document
             </button>
           </div>
