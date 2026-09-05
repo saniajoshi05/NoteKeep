@@ -1,122 +1,135 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app">
+      <aside className="sidebar">
+        <div className="logo">
+          <div className="logo-icon">N</div>
+          <span>NoteKeep</span>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <nav>
+          <a className="nav-item active">
+            <span>⌂</span>
+            Dashboard
+          </a>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <a className="nav-item">
+            <span>▣</span>
+            My Documents
+          </a>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          <a className="nav-item">
+            <span>◈</span>
+            Categories
+          </a>
+
+          <a className="nav-item">
+            <span>☆</span>
+            Templates
+          </a>
+
+          <a className="nav-item">
+            <span>✦</span>
+            AI Assistant
+          </a>
+        </nav>
+
+        <div className="sidebar-bottom">
+          <a className="nav-item">
+            <span>⚙</span>
+            Settings
+          </a>
+        </div>
+      </aside>
+
+      <main className="main-content">
+        <header className="topbar">
+          <div>
+            <h1>Good morning</h1>
+            <p>Welcome back to your learning vault.</p>
+          </div>
+
+          <div className="topbar-actions">
+            <button className="search-button">
+              🔍 Search your vault
+            </button>
+
+            <div className="profile">
+              S
+            </div>
+          </div>
+        </header>
+
+        <section className="welcome-section">
+          <div>
+            <h2>Your knowledge, all in one place.</h2>
+            <p>
+              Store your assignments, notes, frameworks, case studies
+              and other learning materials in one organised space.
+            </p>
+          </div>
+
+          <button className="upload-button">
+            + Add Document
+          </button>
+        </section>
+
+        <section className="stats">
+          <div className="stat-card">
+            <span className="stat-label">Documents</span>
+            <strong>0</strong>
+            <span className="stat-description">
+              Your stored learning materials
+            </span>
+          </div>
+
+          <div className="stat-card">
+            <span className="stat-label">Categories</span>
+            <strong>0</strong>
+            <span className="stat-description">
+              Organised areas of knowledge
+            </span>
+          </div>
+
+          <div className="stat-card">
+            <span className="stat-label">Templates</span>
+            <strong>0</strong>
+            <span className="stat-description">
+              Reusable structures and formats
+            </span>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <div>
+              <h3>Recent Documents</h3>
+              <p>Your recently added learning materials will appear here.</p>
+            </div>
+
+            <button className="view-all">
+              View all
+            </button>
+          </div>
+
+          <div className="empty-state">
+            <div className="empty-icon">+</div>
+
+            <h3>Your vault is empty</h3>
+
+            <p>
+              Add your first document to start building your
+              personal knowledge base.
+            </p>
+
+            <button className="upload-button">
+              Add your first document
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
